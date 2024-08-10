@@ -1,0 +1,38 @@
+﻿@model crud_app.Models.Employee
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card-header">
+                <h1 class="text-center text-primary">Add Employee</h1>
+            </div>
+            <div class="card-body">
+                <form method="post" asp-action="Create">
+                    <div class="form-group">
+                        <label asp-for="EmpName"></label>
+                        <input type="text"asp-for="EmpName"class="form-control" placeholder="Enter Employee Name" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Age"></label>
+                        <input type="number" asp-for="Age" class="form-control" placeholder="Enter Employee Age" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="EmpDesc"></label>
+                        <input type="text" asp-for="EmpDesc" class="form-control" placeholder="Enter Employee Descrption" />
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="submit" class="btn btn-sm btn-outline-success float-right p-2 mb-2" />
+                        
+                    </div>
+                </form>
+            </div>
+</div>
+</div>
+</div>

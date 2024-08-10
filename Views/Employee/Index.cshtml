@@ -1,0 +1,38 @@
+﻿@model IEnumerable<crud_app.Models.Employee>
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <h1 class="text-center text-primary">Employee Records</h1>
+            <a class="btn btn-sm btn-success m-2" asp-controller="Employee" asp-action="create">Create</a>
+            <h3>@TempData["error"]</h3>
+            <table class="table table-bordered">
+                <tr class="text-center">
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Description</th>
+                    <th>Action</th>
+                </tr>
+                @foreach (var d in Model)
+                {
+                    <tr class="text-center">
+                        <td>@d.EmpName</td>
+                        <td>@d.Age</td>
+                        <td>@d.EmpDesc</td>
+                        <td>
+                       <a class="btn btn-warning"asp-controller="Employee" asp-action="Edit" asp-route-id="@d.EmpId">Edit</a>
+                        <a class="btn  btn-danger" asp-controller="Employee" asp-action="Delete" asp-route-id="@d.EmpId">Delete</a>
+                        </td>
+
+                    </tr>
+                } 
+            </table>
+        </div>
+    </div>
+</div>
